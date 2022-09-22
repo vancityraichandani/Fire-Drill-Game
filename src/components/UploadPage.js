@@ -61,12 +61,16 @@ function UploadPage(props) {
                     <img className='metaImg' src={meta} />
                 </div>
             </div>
-            <Button variant="outlined"
-                className='submitbtn'
-                sx={{ border: '3px solid #6200EE', color: '#000' }} >
-                Submit
-                <input hidden type="submit" />
-            </Button>
+            {
+                props.login
+                &&
+                <Button variant="outlined"
+                    className='submitbtn'
+                    sx={{ border: '3px solid #6200EE', color: '#000' }} >
+                    Submit
+                    <input hidden type="submit" />
+                </Button>
+            }
         </>
     )
 }
