@@ -1,13 +1,17 @@
 import './App.css';
 import UploadPage from './components/UploadPage';
-import bg from './assets/bg.png'
 import Navbar from './components/Navbar';
+import { useState } from 'react';
 
 function App() {
+  
+  const [login, setLogin] = useState(false)
+  
+
   return (
     <div className="App">
-      <Navbar />
-      <UploadPage />
+      <Navbar login={login} setLogin={setLogin}/>
+      <UploadPage login={login} setLogin={setLogin}/>
     </div>
   );
 }

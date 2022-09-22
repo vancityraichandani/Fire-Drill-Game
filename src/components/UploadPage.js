@@ -9,7 +9,7 @@ import Alert from '@mui/material/Alert';
 import { Typography } from '@mui/material';
 import meta from '../assets/metaverse.png'
 
-function UploadPage() {
+function UploadPage(props) {
 
     const [file, setFile] = useState(null);
 
@@ -23,26 +23,30 @@ function UploadPage() {
                 </div>
             }
             <div className='upload' >
-                <div className='text'>
-                    <Typography sx={{ width: 400, fontSize: '35px', fontWight: 'bold' }}>
-                        Upload Your Revit Model Here!
-                    </Typography>
-                    <Typography>
-                        Upload your Revit model here. This model will be loaded in the viewer which will enable you to experience a thrilling virtual fire drill.
-                    </Typography>
-                    <form style={{ marginTop: 30 }} className='formStyle animate__animated animate__fadeInUp' action="/action_page.php">
-                        <Button variant="contained" sx={{ marginRight: 2, border: '3px solid #6200EE', backgroundColor: '#6200EE', color: '#fff' }} component="label">
-                            Upload
-                            <input hidden accept=".rvt" multiple type="file"
-                                onChange={(e) => setFile(e.target.files[0])}
-                            />
-                        </Button>
-                        <Button vatiant="outlined" sx={{ border: '3px solid #6200EE', color: '#000' }} >
-                            Submit
-                            <input hidden type="submit" />
-                        </Button>
-                    </form>
-                </div>
+                {
+                    props.login
+                    &&
+                    <div className='text'>
+                        <Typography sx={{ width: 400, fontSize: '35px', fontWight: 'bold' }}>
+                            Upload Your Revit Model Here!
+                        </Typography>
+                        <Typography>
+                            Upload your Revit model here. This model will be loaded in the viewer which will enable you to experience a thrilling virtual fire drill.
+                        </Typography>
+                        <form style={{ marginTop: 30 }} className='formStyle animate__animated animate__fadeInUp' action="/action_page.php">
+                            <Button variant="contained" sx={{ marginRight: 2, border: '3px solid #6200EE', backgroundColor: '#6200EE', color: '#fff' }} component="label">
+                                Upload
+                                <input hidden accept=".rvt" multiple type="file"
+                                    onChange={(e) => setFile(e.target.files[0])}
+                                />
+                            </Button>
+                            <Button vatiant="outlined" sx={{ border: '3px solid #6200EE', color: '#000' }} >
+                                Submit
+                                <input hidden type="submit" />
+                            </Button>
+                        </form>
+                    </div>
+                }
                 <div>
                     <img className='metaImg' src={meta} />
                 </div>

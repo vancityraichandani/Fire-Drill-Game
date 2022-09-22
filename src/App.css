@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap');       
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
 
 * {
   margin: 0;
@@ -6,9 +6,14 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Helvetica, sans-serif;
+  background: #dde2ea;
+}
+
 .logo {
-  font-family: impact !important;
-  font-weight: bold !important
+  font-family: 'Rubik Dirt', cursive !important;
+  font-weight: 600 !important;
   
 }
 
@@ -28,4 +33,234 @@
 
 .headText{
   font-size: 30;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.flex-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  padding: 2rem;
+  width: 530px;
+  height: 500px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.form1 input {
+  outline: none;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.form1 input:focus {
+  border: 1.8px solid #1877f2;
+}
+
+.form1 .login {
+  outline: none;
+  border: none;
+  background: #1877f2;
+  padding: 0.8rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.form1 .login:hover {
+  background: #0f71f1;
+  cursor: pointer;
+}
+
+.form1 a {
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  padding-top: 0.8rem;
+  color: #1877f2;
+}
+
+.form1 hr {
+  background: #f7f7f7;
+  margin: 1rem;
+}
+
+.form1 .create-account {
+  outline: none;
+  border: none;
+  background: #06b909;
+  padding: 0.8rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  color: #fff;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.form1 .create-account:hover {
+  background: #03ad06;
+  cursor: pointer;
+}
+
+/* //.........Media Query.........// */
+
+@media (max-width: 500px) {
+  html {
+    font-size: 60%;
+  }
+
+  .name-content {
+    margin: 0;
+    text-align: center;
+  }
+
+  .form1 {
+    width: 300px;
+    height: fit-content;
+  }
+
+  .form1 input {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .form1 .login {
+    font-size: 1.5rem;
+  }
+
+  .form1 a {
+    font-size: 1.5rem;
+  }
+
+  .form1 .create-account {
+    font-size: 1.5rem;
+  }
+
+  .flex-div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  .name-content {
+    margin: 0;
+    text-align: center;
+  }
+
+  .form1 {
+    width: 300px;
+    height: fit-content;
+  }
+
+  .form1 input {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .form1 .login {
+    font-size: 1.5rem;
+  }
+
+  .form1 a {
+    font-size: 1.5rem;
+  }
+
+  .form1 .create-account {
+    font-size: 1.5rem;
+  }
+
+  .flex-div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+
+  .name-content {
+    margin: 0;
+    text-align: center;
+  }
+
+  .form1 {
+    width: 300px;
+    height: fit-content;
+  }
+
+  .form1 input {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .form1 .login {
+    font-size: 1.5rem;
+  }
+
+  .form1 a {
+    font-size: 1.5rem;
+  }
+
+  .form1 .create-account {
+    font-size: 1.5rem;
+  }
+
+  .flex-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .header {
+      height: 90vmax;
+    }
+  }  
 }
