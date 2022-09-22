@@ -17,6 +17,12 @@ body {
   
 }
 
+.submitbtn{
+  position: absolute !important;
+  bottom: 3% !important;
+  left: 50% !important;
+}
+
 .upload{
   position: absolute;
   top: 50%;
@@ -82,7 +88,7 @@ body {
   background: #fff;
   padding: 2rem;
   width: 530px;
-  height: 500px;
+  height: 450px;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 }

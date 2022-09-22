@@ -19,7 +19,7 @@ function UploadPage(props) {
                 file !== null
                 &&
                 <div className='animate__animated animate__fadeIn' style={{ display: 'flex', justifyContent: 'center', marginTop: 120, fontWeight: 'bold', fontSize: 20 }}>
-                    <Alert sx={{ width: '30%' }} severity="success">{file.name} has been uploaded. Submit to continue.</Alert>
+                    <Alert sx={{ width: '28%' }} severity="success">{file.name} has been uploaded successfully  !</Alert>
                 </div>
             }
             <div className='upload' >
@@ -27,7 +27,7 @@ function UploadPage(props) {
                     props.login
                     &&
                     <div className='text'>
-                        <Typography sx={{ width: 400, fontSize: '35px', fontWight: 'bold' }}>
+                        <Typography sx={{ width: 400, fontSize: '30px', fontWight: 'bold' }}>
                             Upload Your Revit Model Here!
                         </Typography>
                         <Typography>
@@ -40,9 +40,19 @@ function UploadPage(props) {
                                     onChange={(e) => setFile(e.target.files[0])}
                                 />
                             </Button>
-                            <Button vatiant="outlined" sx={{ border: '3px solid #6200EE', color: '#000' }} >
-                                Submit
-                                <input hidden type="submit" />
+                        </form>
+                        <Typography sx={{ marginTop: 5, width: 400, fontSize: '30px', fontWight: 'bold' }}>
+                            Upload FDX link here!
+                        </Typography>
+                        <Typography>
+                            Use this to customise data to be sent.
+                        </Typography>
+                        <form style={{ marginTop: 30 }} className='formStyle animate__animated animate__fadeInUp' action="/action_page.php">
+                            <Button variant="contained" sx={{ marginRight: 2, border: '3px solid #6200EE', backgroundColor: '#6200EE', color: '#fff' }} component="label">
+                                Upload
+                                <input hidden accept="*" multiple type="file"
+                                    onChange={(e) => setFile(e.target.files[0])}
+                                />
                             </Button>
                         </form>
                     </div>
@@ -51,6 +61,12 @@ function UploadPage(props) {
                     <img className='metaImg' src={meta} />
                 </div>
             </div>
+            <Button variant="outlined"
+                className='submitbtn'
+                sx={{ border: '3px solid #6200EE', color: '#000' }} >
+                Submit
+                <input hidden type="submit" />
+            </Button>
         </>
     )
 }

@@ -21,8 +21,6 @@ function Navbar(props) {
         props.setLogin(true)
     }
 
-    const [name, setName] = useState('');
-
     return (
         <div>
             <div>
@@ -40,7 +38,6 @@ function Navbar(props) {
                                 >
                                     PLAYING &nbsp; WITH &nbsp; FIRE
                                 </Typography>
-                                <input type="text" placeholder="Enter Name" onChange={(e) => setName(e.target.value.toUpperCase())} required />
                                 <input type="text" placeholder="Enter Email" required />
                                 <input type="password" placeholder="Password" required />
                                 <br />
@@ -85,7 +82,10 @@ function Navbar(props) {
                                     </Button>
                                 </>
                                 :
-                                <Button sx={{cursor:'none'}} >WELCOME {name}</Button>
+                                <Button
+                                    onClick={() => props.setLogin(false)}>
+                                    Log Out
+                                </Button>
                         }
                     </Box>
                 </Toolbar>
