@@ -83,7 +83,7 @@ function Navbar(props) {
                                 :
                                 <>
                                     <Button variant="contained" key='safetyOfficer' sx={{ marginRight: 3, color: '#fff', backgroundColor: '#6200EE' }}>
-                                        Safety Officer
+                                        Property Manager
                                     </Button>
                                     <Button
                                         onClick={handleLogout}>
