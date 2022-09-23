@@ -6,8 +6,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import '../App.css'
 
-const navItems = ['Home', 'Product', 'Learn', 'Dashboard'];
-
 function Navbar(props) {
 
     const [loginPopup, setLoginPopup] = useState(false);
@@ -24,6 +22,7 @@ function Navbar(props) {
     const handleLogout = () => {
         props.setLogin(false)
         props.setFile(null)
+        props.setSubmit(false)
     }
 
     return (
@@ -39,7 +38,7 @@ function Navbar(props) {
                                     variant="h4"
                                     component="div"
                                     className='logo'
-                                    sx={{ color: '#BE5113', textAlign: 'center', marginBottom: 5 }}
+                                    sx={{cursor:'pointer', color: '#BE5113', textAlign: 'center', marginBottom: 5 }}
                                 >
                                     PLAYING &nbsp; WITH &nbsp; FIRE
                                 </Typography>
@@ -61,18 +60,12 @@ function Navbar(props) {
                         variant="h5"
                         component="div"
                         className='logo'
-                        sx={{ color: '#BE5113', marginLeft: 10, flexGrow: 0.8, display: { xs: 'none', sm: 'block' } }}
+                        sx={{cursor:'pointer', color: '#BE5113', marginLeft: 10, flexGrow: 0.9, display: { xs: 'none', sm: 'block' } }}
                     >
                         PLAYING &nbsp; WITH &nbsp; FIRE
                     </Typography>
                     <Box>
-                        {navItems.map((item) => (
-                            <>
-                                <Button key={item} sx={{ marginRight: 3, color: '#000' }}>
-                                    {item}
-                                </Button>
-                            </>
-                        ))}
+
                         {
                             !props.login ?
                                 <>
@@ -88,10 +81,17 @@ function Navbar(props) {
                                     </Button>
                                 </>
                                 :
-                                <Button
-                                    onClick={handleLogout}>
-                                    Log Out
-                                </Button>
+                                <>
+                                    <Button variant="contained" key='safetyOfficer' sx={{ marginRight: 3, color: '#fff', backgroundColor: '#6200EE' }}>
+                                        Safety Officer
+                                    </Button>
+                                    <Button
+                                        onClick={handleLogout}>
+                                        <span class="account material-symbols-outlined">
+                                            account_circle
+                                        </span>
+                                    </Button>
+                                </>
                         }
                     </Box>
                 </Toolbar>

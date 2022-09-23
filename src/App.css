@@ -20,7 +20,8 @@ body {
 .submitbtn{
   position: absolute !important;
   bottom: 5% !important;
-  left: 48% !important;
+  left: 50% !important;
+  transform: translate(-50%, -5%);
 }
 
 .upload{
@@ -38,8 +39,23 @@ body {
 }
 
 .screen{
-  min-width: 400px;
-  min-height: 400px;
+  width: 500px;
+  height: 400px;
+}
+.screen2{
+  width: 400px;
+  height: 300px;
+  border: 2px solid black;
+}
+
+.account{
+  font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' ;
+  color: #6200ee;
+  font-size: 3rem;
 }
 
 .remove{
