@@ -22,10 +22,17 @@ function UploadPage(props) {
     return (
         <>
             {
+                file !== null && props.login && !submit
+                &&
+                <div className='animate__animated animate__fadeIn' style={{ display: 'flex', justifyContent: 'center', marginTop: 90, fontWeight: 'bold', fontSize: 20 }}>
+                    <Alert sx={{}} severity="success">{file.name} has been selected successfully</Alert>
+                </div>
+            }
+            {
                 file !== null && props.login && submit
                 &&
                 <div className='animate__animated animate__fadeIn' style={{ display: 'flex', justifyContent: 'center', marginTop: 90, fontWeight: 'bold', fontSize: 20 }}>
-                    <Alert sx={{ width: '13%' }} severity="success">Upload Successful</Alert>
+                    <Alert severity="success">Upload Successful</Alert>
                 </div>
             }
             <div className='upload' >
@@ -41,7 +48,10 @@ function UploadPage(props) {
                         </Typography>
                         <form style={{ marginTop: 15 }} className='formStyle animate__animated animate__fadeInUp' action="/action_page.php">
                             <Button variant="contained" sx={{ marginRight: 2, border: '3px solid #6200EE', backgroundColor: '#6200EE', color: '#fff' }} component="label">
-                                Upload
+                                Choose File &nbsp;
+                                <span class="material-symbols-outlined">
+                                    cloud_upload
+                                </span>
                                 <input hidden accept=".rvt" multiple type="file"
                                     onChange={(e) => setFile(e.target.files[0])}
                                 />
@@ -55,23 +65,16 @@ function UploadPage(props) {
                         </Typography>
                         <form style={{ marginTop: 15 }} className='formStyle animate__animated animate__fadeInUp' action="/action_page.php">
                             <TextField
-                                sx={{ width:300, border: '3px solid #6200EE' }}
+                                sx={{ width: 300, border: '3px solid #6200EE' }}
                                 placeholder='Enter FDX link'
                                 onChange={(e) => setFdx(e.target.value)}
                             />
                         </form>
                     </div>
                 }
-                {
-                    file !== null && !submit &&
-                    <div style={{ marginLeft: 40 }}>
-                        {/* change this src to screen image */}
-                        <img className='animate__animated animate__fadeIn animate__slower screen' src={preview} alt="Screen Image" />
-                    </div>
 
-                }
                 <div>
-                    <img className={`metaImg ${props.login ? 'animate__animated animate__fadeInLeft' : ''} ${file !== null ? 'remove' : ''} `} src={meta} />
+                    <img className={`metaImg ${props.login ? 'animate__animated animate__fadeInLeft' : ''} ${submit ? 'remove' : ''} `} src={meta} />
                 </div>
             </div>
             {
@@ -81,7 +84,7 @@ function UploadPage(props) {
                     className='submitbtn'
                     size="large"
                     onClick={handleSubmit}
-                    sx={{width:150, border: '3px solid #6200EE', backgroundColor: '#6200EE', color: '#fff' }} >
+                    sx={{ width: 150, border: '3px solid #6200EE', backgroundColor: '#6200EE', color: '#fff' }} >
                     Submit
                 </Button>
             }
@@ -93,7 +96,7 @@ function UploadPage(props) {
                             Thanks for your submission
                         </Typography>
                         <Typography>
-                            Your submission has been successfully submitted to the fire safety officer.
+                            The fire safety officer has been notified.
                         </Typography>
                     </div>
                     <div style={{ marginLeft: 40 }}>
