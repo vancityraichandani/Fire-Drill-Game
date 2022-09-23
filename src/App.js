@@ -6,12 +6,12 @@ import { useState } from 'react';
 function App() {
   
   const [login, setLogin] = useState(false)
-  
+  const [file, setFile] = useState(null);
 
   return (
     <div className="App">
-      <Navbar login={login} setLogin={setLogin}/>
-      <UploadPage login={login} setLogin={setLogin}/>
+      <Navbar login={login} setLogin={setLogin} file={file} setFile={setFile}/>
+      <UploadPage login={login} setLogin={setLogin} file={file} setFile={setFile}/>
     </div>
   );
 }

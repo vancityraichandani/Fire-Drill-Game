@@ -19,15 +19,15 @@ body {
 
 .submitbtn{
   position: absolute !important;
-  bottom: 3% !important;
-  left: 50% !important;
+  bottom: 5% !important;
+  left: 48% !important;
 }
 
 .upload{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -48%);
   display: flex;
   align-items: center;
 }
@@ -35,6 +35,15 @@ body {
 .metaImg{
   width: 595px;
   height: 595px;
+}
+
+.screen{
+  min-width: 400px;
+  min-height: 400px;
+}
+
+.remove{
+  display: none;
 }
 
 .headText{

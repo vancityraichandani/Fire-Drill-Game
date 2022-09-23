@@ -21,6 +21,11 @@ function Navbar(props) {
         props.setLogin(true)
     }
 
+    const handleLogout = () => {
+        props.setLogin(false)
+        props.setFile(null)
+    }
+
     return (
         <div>
             <div>
@@ -72,6 +77,7 @@ function Navbar(props) {
                             !props.login ?
                                 <>
                                     <Button
+                                        onClick={handleNavLogin}
                                         key="Register" variant="outlined" sx={{ border: '3px solid #6200EE', color: '#000', marginRight: 3 }}>
                                         Register
                                     </Button>
@@ -83,7 +89,7 @@ function Navbar(props) {
                                 </>
                                 :
                                 <Button
-                                    onClick={() => props.setLogin(false)}>
+                                    onClick={handleLogout}>
                                     Log Out
                                 </Button>
                         }

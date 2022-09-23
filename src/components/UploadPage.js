@@ -2,23 +2,22 @@ import React, { useEffect, useState } from 'react'
 import '../App.css'
 import Button from '@mui/material/Button';
 import 'animate.css'
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import Alert from '@mui/material/Alert';
-import { Typography } from '@mui/material';
+import { TextField, Typography } from '@mui/material';
 import meta from '../assets/metaverse.png'
+import fire from '../assets/fire.gif'
 
 function UploadPage(props) {
-
-    const [file, setFile] = useState(null);
+    let file = props.file
+    let setFile = props.setFile
+    const [fdx, setFdx] = useState('');
 
     return (
         <>
             {
-                file !== null
+                file !== null && props.login
                 &&
-                <div className='animate__animated animate__fadeIn' style={{ display: 'flex', justifyContent: 'center', marginTop: 120, fontWeight: 'bold', fontSize: 20 }}>
+                <div className='animate__animated animate__fadeIn' style={{ display: 'flex', justifyContent: 'center', marginTop: 90, fontWeight: 'bold', fontSize: 20 }}>
                     <Alert sx={{ width: '28%' }} severity="success">{file.name} has been uploaded successfully  !</Alert>
                 </div>
             }
@@ -48,17 +47,25 @@ function UploadPage(props) {
                             Use this to customise data to be sent.
                         </Typography>
                         <form style={{ marginTop: 30 }} className='formStyle animate__animated animate__fadeInUp' action="/action_page.php">
-                            <Button variant="contained" sx={{ marginRight: 2, border: '3px solid #6200EE', backgroundColor: '#6200EE', color: '#fff' }} component="label">
-                                Upload
-                                <input hidden accept="*" multiple type="file"
-                                    onChange={(e) => setFile(e.target.files[0])}
-                                />
-                            </Button>
+                            <TextField
+                                sx={{ border: '3px solid #6200EE' }}
+                                fullWidth
+                                placeholder='Enter FDX link'
+                                onChange={(e) => setFdx(e.target.value)}
+                            />
                         </form>
                     </div>
                 }
+                {
+                    file !== null &&
+                    <div style={{ marginLeft: 40 }}>
+                        {/* change this src to screen image */}
+                        <img className='screen' src={'demo'} alt="Screen Image" />
+                    </div>
+
+                }
                 <div>
-                    <img className='metaImg' src={meta} />
+                    <img className={`metaImg ${props.login ? 'animate__animated animate__fadeInLeft' : ''} ${file !== null ? 'remove' : ''} `} src={meta} />
                 </div>
             </div>
             {
@@ -66,9 +73,9 @@ function UploadPage(props) {
                 &&
                 <Button variant="outlined"
                     className='submitbtn'
-                    sx={{ border: '3px solid #6200EE', color: '#000' }} >
+                    size="large"
+                    sx={{ border: '3px solid #6200EE', backgroundColor: '#6200EE', color: '#fff' }} >
                     Submit
-                    <input hidden type="submit" />
                 </Button>
             }
         </>
